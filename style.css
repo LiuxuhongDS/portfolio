@@ -1,0 +1,10 @@
+body {
+    font: 100%/1.5 system-ui;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+img {
+    max-width: 200px;
+}
