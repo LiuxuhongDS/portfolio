@@ -8,6 +8,7 @@ body {
 img {
     max-width: 200px;
 }
+
 html {
     --color-accent: oklch(65% 50% 0);
     accent-color: var(--color-accent);
@@ -36,6 +37,7 @@ nav a.current {
     border-bottom: 0.4em solid oklch(80% 3% 200);
     padding-bottom: 0.1em;
 }
+
 form {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -56,4 +58,30 @@ form input, form textarea, form button {
 
 form button {
     grid-column: 1 / -1;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: 1em;
+}
+
+.projects article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+}
+
+.projects img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 400%;
+    line-height: 1.1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    text-wrap: balance;
 }
