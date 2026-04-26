@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Visual Analytics Dashboard",
+    "year": 2025,
+    "description": "An interactive dashboard for exploring complex datasets using D3.js and React.",
+    "image": "https://picsum.photos/seed/proj1/400/300"
+  },
+  {
+    "title": "Machine Learning Pipeline",
+    "year": 2025,
+    "description": "Automated ML pipeline for data preprocessing, model training, and evaluation.",
+    "image": "https://picsum.photos/seed/proj2/400/300"
+  },
+  {
+    "title": "Natural Language Processor",
+    "year": 2024,
+    "description": "NLP tool for sentiment analysis and text classification using Python and NLTK.",
+    "image": "https://picsum.photos/seed/proj3/400/300"
+  },
+  {
+    "title": "Climate Data Explorer",
+    "year": 2024,
+    "description": "Web app for visualizing historical climate trends across global regions.",
+    "image": "https://picsum.photos/seed/proj4/400/300"
+  },
+  {
+    "title": "Recommendation Engine",
+    "year": 2024,
+    "description": "Collaborative filtering system for personalized content recommendations.",
+    "image": "https://picsum.photos/seed/proj5/400/300"
+  },
+  {
+    "title": "Social Network Analyzer",
+    "year": 2023,
+    "description": "Graph-based analysis tool for visualizing social network structures and communities.",
+    "image": "https://picsum.photos/seed/proj6/400/300"
+  },
+  {
+    "title": "Predictive Health Monitor",
+    "year": 2023,
+    "description": "Machine learning model to predict patient health outcomes from clinical data.",
+    "image": "https://picsum.photos/seed/proj7/400/300"
+  },
+  {
+    "title": "Real-time Stock Tracker",
+    "year": 2023,
+    "description": "Live stock market tracker with price alerts and portfolio management.",
+    "image": "https://picsum.photos/seed/proj8/400/300"
+  },
+  {
+    "title": "Image Classification API",
+    "year": 2022,
+    "description": "REST API for image classification using a fine-tuned convolutional neural network.",
+    "image": "https://picsum.photos/seed/proj9/400/300"
+  },
+  {
+    "title": "Survey Data Visualizer",
+    "year": 2022,
+    "description": "Tool for cleaning and visualizing large-scale survey response datasets.",
+    "image": "https://picsum.photos/seed/proj10/400/300"
+  },
+  {
+    "title": "Geospatial Crime Mapper",
+    "year": 2022,
+    "description": "Interactive map showing crime patterns across San Diego neighborhoods.",
+    "image": "https://picsum.photos/seed/proj11/400/300"
+  },
+  {
+    "title": "Personal Finance Tracker",
+    "year": 2021,
+    "description": "Web app for tracking expenses, budgets, and savings goals with charts.",
+    "image": "https://picsum.photos/seed/proj12/400/300"
+  }
+]
