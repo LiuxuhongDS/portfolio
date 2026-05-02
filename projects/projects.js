@@ -9,14 +9,19 @@ renderProjects(projects, projectsContainer, 'h2');
 const heading = document.querySelector('.projects-title');
 heading.textContent = `${projects.length} Projects`;
 
-// ── 饼图 ──────────────────────────────────────────────────────────────────────
-
 let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
 let colors = d3.scaleOrdinal(d3.schemeTableau10);
 let selectedIndex = -1;
+let query = '';
+
+function getFilteredProjects() {
+  return projects.filter((project) => {
+    let values = Object.values(project).join('\n').toLowerCase();
+    return values.includes(query.toLowerCase());
+  });
+}
 
 function renderPieChart(projectsGiven) {
-  // 计算每年的项目数
   let rolledData = d3.rollups(
     projectsGiven,
     (v) => v.length,
@@ -32,13 +37,11 @@ function renderPieChart(projectsGiven) {
   let arcData = sliceGenerator(data);
   let arcs = arcData.map((d) => arcGenerator(d));
 
-  // 清空旧内容
   let svg = d3.select('svg');
   svg.selectAll('path').remove();
   let legend = d3.select('.legend');
   legend.selectAll('li').remove();
 
-  // 画饼图
   arcs.forEach((arc, i) => {
     svg
       .append('path')
@@ -47,19 +50,21 @@ function renderPieChart(projectsGiven) {
       .attr('class', selectedIndex === i ? 'selected' : '')
       .on('click', () => {
         selectedIndex = selectedIndex === i ? -1 : i;
-        renderPieChart(projectsGiven);
+
+        // 同时应用搜索和年份过滤
+        let filtered = getFilteredProjects();
+        renderPieChart(filtered);
 
         if (selectedIndex === -1) {
-          renderProjects(projectsGiven, projectsContainer, 'h2');
+          renderProjects(filtered, projectsContainer, 'h2');
         } else {
           let selectedYear = data[selectedIndex].label;
-          let filtered = projectsGiven.filter((p) => p.year === selectedYear);
-          renderProjects(filtered, projectsContainer, 'h2');
+          let byYear = filtered.filter((p) => p.year === selectedYear);
+          renderProjects(byYear, projectsContainer, 'h2');
         }
       });
   });
 
-  // 画图例
   data.forEach((d, i) => {
     legend
       .append('li')
@@ -71,16 +76,12 @@ function renderPieChart(projectsGiven) {
 
 renderPieChart(projects);
 
-// ── 搜索 ──────────────────────────────────────────────────────────────────────
-let query = '';
 let searchInput = document.querySelector('.searchBar');
 
 searchInput.addEventListener('input', (event) => {
   query = event.target.value;
-  let filteredProjects = projects.filter((project) => {
-    let values = Object.values(project).join('\n').toLowerCase();
-    return values.includes(query.toLowerCase());
-  });
-  renderProjects(filteredProjects, projectsContainer, 'h2');
-  renderPieChart(filteredProjects);
+  selectedIndex = -1;  // 搜索时重置选中
+  let filtered = getFilteredProjects();
+  renderProjects(filtered, projectsContainer, 'h2');
+  renderPieChart(filtered);
 });
