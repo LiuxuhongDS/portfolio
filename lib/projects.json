@@ -1,4 +1,11 @@
+
 [
+  {
+  "name": "Bikewatching",
+  "year": 2026,
+  "description": "An interactive geospatial visualization of BlueBike station traffic in the Boston area. Built with Mapbox GL JS and D3.js, featuring bike lane overlays, traffic volume circles, and a time-of-day filter slider.",
+  "url": "https://liuxuhongds.github.io/bikewatching/"
+},
   {
     "title": "Visual Analytics Dashboard",
     "year": 2025,
